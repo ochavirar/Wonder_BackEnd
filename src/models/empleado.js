@@ -19,21 +19,4 @@ const empleadoSchema = new Schema({
     tag: {type: String, required: true},
 });
 
-// const meseroSchema = new Schema({
-//     nombre: {type: String, required: true},
-//     apellido: {type: String, required: true},
-//     edad: {type: Number, required: true},
-//     estatus: {type: String, required: true},
-//     mesas: {type: [{
-//         type: Schema.ObjectId,
-//         ref: 'Mesa'
-//     }]},
-//     pedidos: {type: [{
-//         type: Schema.ObjectId,
-//         ref: 'Pedido'
-//     }]}
-// });
-
-//TODO: Esquema de cocinero
-
 module.exports = model('empleados', empleadoSchema);
