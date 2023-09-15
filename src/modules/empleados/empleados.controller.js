@@ -1,4 +1,4 @@
-const Empleado = require('../models/empleado');
+const Empleado = require('./empleados.schema');
 
 const EmpleadosController = {
     listarTodosLosEmpleados: function (req, res) { // READ sin filtros

@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const alimentoController = require('../controllers/alimentosController');
+const alimentoController = require('./alimentos.controller');
 
 router.get('/', alimentoController.listarTodosLosAlimentos); // READ general de alimento
+
+router.get('/:id', alimentoController.listarAlimentoPorId); // READ de alimento por id
 
 router.post('/', alimentoController.crearAlimento); // CREATE alimento
 
