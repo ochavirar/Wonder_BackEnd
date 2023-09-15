@@ -6,6 +6,65 @@ class MeseroTemplate extends EmpleadoTemplate{
         this.mesas = [];
         this.pedidos = [];
     }
+
+    
+    asignar_mesa(mesa){
+        this.mesas.push(mesa);
+    }
+    tomar_pedido(mesa){
+        this.pedidos.push(mesa);
+    }
+    servir_pedido(mesa, pedido){
+        pedido.estado = 'Entregado';
+    }
+    calcularCuenta(pedido){
+        const articulos = pedido.articulos
+        const total = 0.0;
+        articulos.forEach(articulo => {
+            total += articulo.precio;
+        });
+
+        return total;
+    }
+
+    cobrar_persona(pedido){
+        const totalPersona = 0.0
+        pedido.forEach(articulo => {
+            totalPersona+=articulo.precio;
+        });
+
+        return totalPersona
+    }
+
+    cobrar_mesa(mesa,forma){
+        const pedidosDict = mesa.pedidos
+        const dict ={}
+        const total = 0.0;
+        
+        if(forma == 'Individual'){
+            for( let key in pedidosDict){
+                const pedido = pedidosDict[key];
+                dict[key] = this.cobrar_persona(pedido);
+            }
+        }else{
+            for (let key in pedidosDict) {
+                const pedido = pedidosDict[key];
+                total += this.calcularCuenta(pedido);
+            }
+            const numMesa = mesa.numero
+            const strMesa = numMesa.toString();
+            
+            dict = {
+                strMesa : total
+            }
+        }
+    
+        return dict;
+        
+    }
+
+    
+
 }
 
 const meseroSchema = new Schema({
