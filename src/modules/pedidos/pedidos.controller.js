@@ -1,4 +1,4 @@
-const Pedido = require('../models/pedido');
+const Pedido = require('./pedidos.schema');
 
 /**
  * Controlador para gestionar las operaciones CRUD de pedidos.

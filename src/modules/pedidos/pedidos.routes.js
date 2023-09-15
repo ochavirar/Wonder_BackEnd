@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const pedidoController = require('../controllers/pedidosController');
+const pedidoController = require('./pedidos.controller');
 
 router.get('/', pedidoController.listarTodosLosPedidos); // READ general de pedidos
 router.post('/', pedidoController.crearPedido); // CREATE pedido
