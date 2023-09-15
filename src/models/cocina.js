@@ -1,14 +1,17 @@
-const express = require('express');
-const router = express.Router();
-const cocinaController = require('../controllers/empleadosController');
+import { Schema, model } from 'mongoose';
 
-router.put('/:id', cocinaController.agregarCocinero); // UPDATE general de empleados
+class Cocina {
+    constructor(Cocineros) {
+        this.cocineros = [];
+        this.pedidos_entrada = [];
+        this.pedidos_salida = [];
+    }
+};
 
-router.put('/:id', cocinaController.eliminarCocinero); // UPDATE empleado
+const cocinaScehma = new Schema({
+    cocineros: { type: list, required: true },
+    pedidos_entrada: { type: list, required: true },
+    pedidos_salida: { type: list, required: true },
+});
 
-router.put('/:id', cocinaController.agregarPedido); // UPDATE empleado
-
-router.put('/:id', cocinaController.tomarPedido); // UPDATE empleado
-
-router.put('/:id', cocinaController.servirPedido); // UPDATE empleado
-module.exports = router;
+export default model('Cocina', cocinaScehma);
