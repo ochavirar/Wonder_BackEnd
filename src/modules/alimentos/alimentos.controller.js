@@ -22,7 +22,8 @@ const AlimentosController = {
             tipo: req.body.tipo,
             descripcion: req.body.descripcion,
             imagen: req.body.imagen,
-            ingredientes: req.body.ingredientes
+            ingredientes: req.body.ingredientes,
+            veces_pedido: 0
         });
         nuevoAlimento.save()
             .then(response => {
