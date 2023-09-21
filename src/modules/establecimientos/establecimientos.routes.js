@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const establecimientoController = require('./establecimientoController');
+const establecimientoController = require('./establecimientos.controller');
 
 router.put('/:id', establecimientoController.agregarMesa); // UPDATE mesa
 

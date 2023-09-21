@@ -1,5 +1,5 @@
 const {Schema, model} = require('mongoose');
-const cocina = require('../cocina/cocina.schema');
+const cocina = require('../cocinas/cocinas.schema');
 
 class Establecimiento {
     constructor(nombre, direccion, mesas, empleados, meseros, menu, cocina) {
@@ -59,4 +59,4 @@ const establecimientoScehma = new Schema({
     },
 });
 
-export default model('Establecimiento', establecimientoScehma);
+module.exports = model('Establecimiento', establecimientoScehma);
