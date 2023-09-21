@@ -1,4 +1,4 @@
-const Cocina = require('../models/cocina');
+const Cocina = require('./cocinas.schema');
 
 const CocinaController = {
 

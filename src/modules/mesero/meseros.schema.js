@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 const EmpleadoTemplate = require('../empleados/empleados.schema')
-
+const AlimentosTemplate = require('../alimentos/alimentos.schema')
+const AlimentosController = require('../alimentos/alimentos.controller')
 class MeseroTemplate extends EmpleadoTemplate {
     constructor(nombre, apellido, edad, estatus) {
         super(nombre, apellido, edad, estatus);
@@ -39,6 +40,7 @@ class MeseroTemplate extends EmpleadoTemplate {
         const totalPersona = 0.0
         pedido.forEach(articulo => {
             totalPersona += articulo.precio;
+            AlimentosController.listarAlimentoPorId(pedido.ObjectId)
         });
 
         return totalPersona
